@@ -20,3 +20,30 @@
 */
 
 // WRITE YOUR CODE HERE
+
+//C++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+Class Solution{
+public:
+    vector<string> little_endian(vector<string> input){
+        vector <string> output;
+        string temp;
+        for(auto elem : input){
+            temp = "";
+            temp1 = "";
+            for(int x = 2 ; x < 10 ; x++){
+                temp1+=elem[x];
+                if(x%2!=0){
+                    temp = temp1 + temp;
+                    temp1 = "";
+                }
+            }
+            temp = "0x" + temp;
+            output.push_back(temp);
+        }
+        return output;
+    }
+};
